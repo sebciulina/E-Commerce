@@ -1,0 +1,105 @@
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  /* Dodaj odpowiednie kolory i cienie */
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+}
+
+.searchBar {
+  width: 33%;
+  margin: 0 2rem; 
+  display: flex;
+  align-items: center;
+  background-color: #f0eef6;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  flex-grow: 1;
+  color: #333;
+}
+
+.searchBar button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  transition: color 0.2s ease;
+}
+
+.searchBar button:hover {
+  color: #4f46e5;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loginButton, .cartButton {
+  background-color: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover, .cartButton:hover {
+  background-color: #4f46e5;
+}
+
+.cartButton {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoriesBar {
+  display: flex;
+  justify-content: center;
+  background-color: #f0eef6;
+  padding: 0.8rem 0;
+}
+
+.categoryButton {
+  color: #333;
+  text-decoration: none; 
+  padding: 0.5rem 1rem;
+  transition: text-decoration 0.3s ease;
+  font-weight: bold;
+}
+
+.categoryButton:hover {
+  text-decoration: underline;
+}
