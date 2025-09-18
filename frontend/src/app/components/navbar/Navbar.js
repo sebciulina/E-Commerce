@@ -5,10 +5,9 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
-import SearchIcon from '../icons/Search.js';
-import ShoppingCartIcon from '../icons/ShoppingCart.js';
-import UserNotLoggedInIcon from '../icons/UserNotLoggedIn.js';
-import UserLoggedInIcon from '../icons/UserLoggedIn.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -79,14 +78,14 @@ export default function Navbar() {
               className={styles.expandedSearchInput}
             />
             <button onClick={handleSearchToggle} className={styles.searchToggleButton}>
-              <SearchIcon width={30} height={30} />
+              <FontAwesomeIcon icon={faMagnifyingGlass} size='2x'/>
             </button>
           </div>
           <Link href="/login" className={styles.loginButton}>
-            <ShoppingCartIcon width={30} height={30} />
+            <FontAwesomeIcon icon={faCartShopping} size='2x'/>
           </Link>
           <Link href="/cart" className={styles.cartButton}>
-            <UserNotLoggedInIcon width={30} height={30} />
+            <FontAwesomeIcon icon={faUser} size='2x'/>
           </Link>
         </div>
       </div>

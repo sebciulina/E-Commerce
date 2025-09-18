@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
 }
 
 .logo {
@@ -57,21 +57,22 @@
 .categoryButton {
   color: #333;
   text-decoration: none; 
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   transition: text-decoration 0.3s ease;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .categoryButton:hover {
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
 }
 
 .active {
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
   font-weight: bold;
 }
 
@@ -89,7 +90,7 @@
 .searchContainer.visible {
   background-color: #f0eef6;
   border: 2px solid black;
-  width: 300px;
+  width: 400px;
   padding: 0rem 0.3rem;
 }
 
