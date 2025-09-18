@@ -1,49 +1,94 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
-import SearchIcon from '../icons/search/Search.js';
-import ShoppingCartIcon from '../icons/shoppingCart/ShoppingCart.js';
+import SearchIcon from '../icons/Search.js';
+import ShoppingCartIcon from '../icons/ShoppingCart.js';
+import UserNotLoggedInIcon from '../icons/UserNotLoggedIn.js';
+import UserLoggedInIcon from '../icons/UserLoggedIn.js';
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const searchContainerRef = useRef(null);
+
+  const handleSearchToggle = () => {
+    setIsSearchVisible(prev => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setIsSearchVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className={styles.navContainer}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src="/images/logo.jpg"
-              alt="ClickShop Logo"
+              src="/images/logo.png"
+              alt="Logo"
               width={150}
               height={120}
             />
           </Link>
         </div>
-        <div className={styles.searchBar}>
-          <input type="text" placeholder="Wyszukaj" />
-          <button type="submit">
-            <SearchIcon width={20} height={20} />
-          </button>
+        <div className={styles.categoriesBar}>
+          <Link
+            href="/"
+            className={`${styles.categoryButton} ${pathname === '/' ? styles.active : ''}`}
+          >
+            <span>Home</span>
+          </Link>
+          <Link
+            href="/shop"
+            className={`${styles.categoryButton} ${pathname === '/shop' ? styles.active : ''}`}
+          >
+            <span>Shop</span>
+          </Link>
+          <Link
+            href="/about"
+            className={`${styles.categoryButton} ${pathname === '/about' ? styles.active : ''}`}
+          >
+            <span>About</span>
+          </Link>
+          <Link
+            href="/contact"
+            className={`${styles.categoryButton} ${pathname === '/contact' ? styles.active : ''}`}
+          >
+            <span>Contact</span>
+          </Link>
         </div>
         <div className={styles.userActions}>
+          <div ref={searchContainerRef} className={`${styles.searchContainer} ${isSearchVisible ? styles.visible : ''}`}>
+            <input
+              type="text"
+              placeholder="Search..."
+              className={styles.expandedSearchInput}
+            />
+            <button onClick={handleSearchToggle} className={styles.searchToggleButton}>
+              <SearchIcon width={30} height={30} />
+            </button>
+          </div>
           <Link href="/login" className={styles.loginButton}>
-            Zaloguj
+            <ShoppingCartIcon width={30} height={30} />
           </Link>
           <Link href="/cart" className={styles.cartButton}>
-            <ShoppingCartIcon width={20} height={20} />
+            <UserNotLoggedInIcon width={30} height={30} />
           </Link>
         </div>
-      </div>
-
-      <div className={styles.categoriesBar}>
-        <Link href="/new-arrivals" className={styles.categoryButton}>
-          <span>Nowości</span>
-        </Link>
-        <Link href="/category/1" className={styles.categoryButton}>
-          <span>Kategoria 1</span>
-        </Link>
-        <Link href="/category/2" className={styles.categoryButton}>
-          <span>Kategoria 2</span>
-        </Link>
       </div>
     </nav>
   );
