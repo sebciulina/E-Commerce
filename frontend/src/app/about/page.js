@@ -1,3 +1,5 @@
+'use client';
+
 import BannerSection from "../components/about/BannerSection.js";
 import OurMissionSection from "../components/about/OurMissionSection.js";
 import OurValuesSection from "../components/about/OurValuesSection.js";
