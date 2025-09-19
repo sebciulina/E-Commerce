@@ -81,10 +81,10 @@ export default function Navbar() {
               <FontAwesomeIcon icon={faMagnifyingGlass} size='2x'/>
             </button>
           </div>
-          <Link href="/login" className={styles.loginButton}>
+          <Link href="/cart" className={styles.loginButton}>
             <FontAwesomeIcon icon={faCartShopping} size='2x'/>
           </Link>
-          <Link href="/cart" className={styles.cartButton}>
+          <Link href="/login" className={styles.cartButton}>
             <FontAwesomeIcon icon={faUser} size='2x'/>
           </Link>
         </div>

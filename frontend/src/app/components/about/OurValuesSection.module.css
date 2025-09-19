@@ -1,0 +1,60 @@
+.valuesSection {
+  padding: 4rem;
+  background-color: #fff;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.textContainer {
+  flex-basis: 50%;
+}
+
+.textContainer h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.textContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.textContainer li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.listIcon {
+  color: #008080;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+  flex-basis: 50%;
+  place-items: center; 
+  padding: 4rem 0 0 0;
+}
+
+.valueIcon {
+  font-size: 3rem;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.valueIcon:hover {
+  transform: scale(1.1);
+}

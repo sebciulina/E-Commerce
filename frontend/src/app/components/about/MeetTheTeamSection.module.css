@@ -1,0 +1,61 @@
+.teamSection {
+  text-align: left;
+  padding: 4rem;
+}
+
+.teamSection h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.groupPhotoContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.groupPhoto {
+  object-fit: cover;
+}
+
+.teamMembersContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.memberCard {
+  flex-basis: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memberPhoto {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.memberCard h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.memberCard p {
+  color: #555;
+  font-size: 0.9rem;
+}

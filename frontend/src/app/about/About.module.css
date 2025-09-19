@@ -1,0 +1,9 @@
+.combinedSections {
+    display: flex;
+    align-items: center;
+}
+
+.combinedSections > div {
+    flex-basis: 50%;
+    padding: 2rem;
+}
